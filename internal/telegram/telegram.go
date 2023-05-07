@@ -95,10 +95,17 @@ func (c *Client) SendMessage(chatID int, text string, keyboard ReplyKeyboardMark
 	return nil
 }
 
-func (c *Client) SendPicture(chatID int, imageURL string) error {
+func (c *Client) SendPicture(chatID int, imageURL string, keyboard ReplyKeyboardMarkup) error {
 	q := url.Values{}
 	q.Add("chat_id", strconv.Itoa(chatID))
 	q.Add("photo", imageURL)
+	if keyboard.Keyboard != nil {
+		keyboardJSON, err := json.Marshal(keyboard)
+		if err != nil {
+			return errors.New("failed to marshal keyboard: " + err.Error())
+		}
+		q.Add("reply_markup", string(keyboardJSON))
+	}
 
 	_, err := c.doRequest("sendPhoto", q)
 	if err != nil {
