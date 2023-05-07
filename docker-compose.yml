@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  tg_bot:
+    image: phaseant/tg_bot:1.00
+    environment:
+      - TELEGRAM_API_TOKEN="6205415217:AAH__2WJBnrinFNoDLCCw42dqw1z-kl48ig"
+    network_mode: "host"
+
+
+
+
