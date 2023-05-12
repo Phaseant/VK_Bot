@@ -55,7 +55,7 @@ func (p *Processor) doCmd(text string, chatID int, username string) error {
 
 	text = strings.TrimSpace(text)
 
-	log.Printf("got command: %s", text)
+	log.Printf("got command: %s\n\n", text)
 
 	switch text {
 	case START:

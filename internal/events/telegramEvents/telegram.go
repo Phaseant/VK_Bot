@@ -2,6 +2,7 @@ package telegramEvents
 
 import (
 	"errors"
+	"log"
 
 	"github.com/Phaseant/VK_Bot/internal/events"
 	"github.com/Phaseant/VK_Bot/internal/telegram"
@@ -57,6 +58,7 @@ func (p *Processor) Process(event events.Event) error {
 
 func (p *Processor) processMessage(event events.Event) error {
 	meta, err := meta(event)
+	log.Print("processing message for user: ", meta.Username)
 	if err != nil {
 		return errors.New("failed to get meta: " + err.Error())
 	}
