@@ -13,10 +13,12 @@ Open @VkInternshipbot in telegram.
 
 - Custom keyboard
 
-- Really funny joke
+- Two variants for each menu element
+
+- Cool jokes
 
 - Two songs in Russian and English
 
-- My beloved poem
+- My beloved poems
 
-- Cool gopher image
+- Cool gopher and Sponge Bob images
